@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+	<style type="text/css">
+		h1,h2,h3{
+			color: red;
+			text-align: center;
+			text-decoration: underline;
+		}
+			body{
+			background-color: #f7eeed;
+		}
+		.la{
+
+
+			height: 50px;
+			padding-bottom: 5px;
+		}
+		#first{
+			margin: auto;
+			
+			width: 600px;
+			height: 500px;
+			border-radius: 25px;
+
+		}
+		label{
+			float: left;
+			width: 200px;
+			height: 20px;
+			text-align: center;
+
+
+		}
+		#sub{
+			color: yellow;width: 100px;
+			background-color: #3299a8;
+			border: 1px solid ;
+			margin-left: 200px;
+			border-radius: 25px;
+		}
+		#sub:hover{
+			background-color: green;
+		}
+		input:hover,select:hover{
+			background-color: skyblue;
+		}
+		input,select{
+			float: left;
+			width: 200px;
+			height: 20px;
+			border:1px solid red;
+			padding-top: 2px;
+			margin-top: 15px;
+			margin-bottom: 5px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<h1>Simple Calculator Using Javascript And HTML</h1>
+<div id="first">
+	<div style="border: 5px solid red;border-radius:25px;width: 500px;margin: 10px 45px ;">
+	<form onsubmit="myFunction()">
+		<h2 style="color: red;width: 100px;background-color: #3299a8;border: 1px solid ;margin-left: 200px;border-radius: 25px;">Input</h2>
+		<div class="la">
+  <label for="fname"><h3>First Number:</h3></label>
+  <input type="Number" id="fname" name="fnum" required="true" placeholder="0000"></div>
+
+ 
+  	<div class="la">
+
+  		<label for="cars"><h3>Operator:</h3></label>
+
+<select name="cars" id="op">
+  <option value="+"><h3>+</h3></option>
+  <option value="-"><h3>-</h3></option>
+  <option value="*"><h3>X</h3></option>
+  <option value="%"><h3>%</h3></option>
+</select>
+  	</div>
+  	<div class="la">
+ <label for="lname"><h3>Last Number:</h3></label>
+  <input type="Number" id="lname" name="lnum" required="true" placeholder="0000"></div>
+<div class="la">
+  <input type="submit" value="Submit" id="sub"></div>
+</form></div>
+
+<!--<div style="border: 5px solid red;border-radius:25px;width: 500px;margin: 10px 45px ;">
+	<h2 style="color: red;width: 100px;background-color:green;border: 1px solid ;margin-left: 200px;border-radius: 25px;">Output</h2>
+	<h2 style="color: green;text-align: center;" id="ans">
+		h
+	</h2>
+
+</div>-->
+
+	
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	function myFunction() {
+		var x = parseInt(document.getElementById("fname").value);
+		var y = parseInt(document.getElementById("lname").value);
+		var op=document.getElementById("op").value;
+  var p=0;
+  if(op=='*')
+  {
+  	p=x*y;
+  }
+  else if(op=='+')
+  {
+  	p=x+y;
+  }else if(op=='-')
+  {
+  	p=x-y;
+  }else{
+  	p=x/y;
+  }
+  p=x+" "+op+" "+y+" ="+p;
+  alert(p);
+  document.getElementById("ans").innerHTML=p;
+}
+</script>
